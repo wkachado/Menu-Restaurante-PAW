@@ -1,0 +1,27 @@
+{% extends 'App/base.html' %}
+
+{% load static %}
+
+{% block title %}
+    Dejanos tu opinión
+{% endblock title %}
+
+{% block codigoDinamico %}
+
+    // Verifica si hay mensajes
+    {% if messages %}
+        // Itera sobre cada mensaje
+        {% for message in messages %}
+            // Si el mensaje tiene la etiqueta 'success'
+            {% if message.tags == 'success' %}
+                toastr.success('{{ message|escapejs }}'); // Uso de escapejs para asegurar correcta interpolación
+            // Si el mensaje tiene la etiqueta 'error'
+            {% elif message.tags == 'error' %}
+                toastr.error('{{ message|escapejs }}'); // Uso de escapejs para asegurar correcta interpolación
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+
+
+<a href="{% url 'Listar Mensajes' %}">Ver Mensajes</a>
+{% endblock %}

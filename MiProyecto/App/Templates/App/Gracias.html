@@ -1,0 +1,19 @@
+{% extends 'App/base.html' %}
+
+{% load static %}
+
+{% block title %}
+    ¡Gracias por tu mensaje!
+{% endblock title %} <!-- Corregido de 'tittle' a 'title' -->
+
+{% block codigoDinamico %}
+<div class="container mt-5">
+    <div class="text-center">
+        <h1>¡Gracias por contactarnos!</h1>
+        <p>Hemos recibido tu mensaje y nos pondremos en contacto contigo lo antes posible.</p>
+        <a href="{% url 'Principal' %}" class="btn btn-primary mt-4">Volver a la página principal</a>
+        <a href="{% url 'Listar Mensajes' %}" class="btn btn-primary mt-4">Ver mensajes</a> <!-- Cambié 'listar_mensajes' por 'Ver mensajes' -->
+    </div>
+</div>
+
+{% endblock codigoDinamico %}

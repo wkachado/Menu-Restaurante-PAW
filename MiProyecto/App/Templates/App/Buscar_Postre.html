@@ -1,0 +1,43 @@
+{% extends 'App/base.html' %}
+
+{% load static %}
+
+{% block title %}
+    Buscar Postre
+{% endblock title %}
+
+{% block codigoDinamico %}
+
+<div class="container">
+    <br> <br> <br>
+    <form action="" method="get">
+        
+        <input type="text" name="nombre" id="nombre" placeholder="buscar postre">
+        <br> <br> <br>
+        <input type="submit" value="Buscar Postre" class="btn btn-outline-primary">
+    
+    </form>
+    <br> <br> <br>
+    {% if postre %}
+
+        {% for postre in postre %}
+        <table class="table table-hover text-center">
+        </tbody>
+            <th scope="col">Nombre</th>
+            <th scope="col">ID</th>
+            <th scope="col">Precio</th>
+            <tr class="table-secondary text-center">
+                <td>{{ postre.nombre }}</td>
+                <td>{{ postre.id }}</td>
+                <td>{{ postre.precio }}</td>
+            </tbody>
+        </table>
+        {% endfor %}
+        
+    {% else %}
+    <h1>No hay resultados para tu busqueda.</h1>
+    {% endif %}
+    
+</div>
+
+{% endblock %}
