@@ -1,0 +1,23 @@
+{% extends 'App/base.html' %}
+
+{% load static %}
+
+{% block tittle %}
+    Dejanos tu opinion
+{% endblock tittle%}
+
+{% block codigoDinamico %}
+
+    {% if messages %}
+        {% for message in messages %}
+            {% if message.tags == 'success' %}
+                toastr.success('{{ message  }}');
+            {% elif message.tags == 'error' %}
+                toastr.error('{{ message  }}');
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+
+
+{% url 'Listar Mensajes' %}
+{% endblock %}

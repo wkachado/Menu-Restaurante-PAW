@@ -1,0 +1,49 @@
+{% extends 'App/base.html' %}
+
+{% load static %}
+
+{% block title %}
+    Comidas
+{% endblock %}
+
+{% block codigoDinamico %}
+<div class="container"transition-style="in:wipe:up">
+    <h1> Comidas </h1> <br> <br> <br>
+{% for comida in comida %}
+    <div class="container"transition-style="in:wipe:up">
+        <table class="table table-hover text-center">
+            <tbody>
+                <th scope="col">ID</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Descripcion</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Categoria</th>
+                <tr class="table-secondary text-center">
+                    <th>   {{ comida.id }}</th>
+                    <td>   {{ comida.nombre }}</td>
+                    <td>   {{ comida.descripcion }}</td>
+                    <th>  ${{ comida.precio }}</th>
+                    <td>   {{ comida.categoria }}</td>
+            </tbody>
+        </table>
+    </div>
+    <div class="container">
+        <button type="button" class="btn btn-outline-success">
+            <a href="{% url 'Crear Comida' %}">Nueva Comida</a>
+        </button> &nbsp; &nbsp; &nbsp;
+        <button type="button" class="btn btn-outline-primary">
+            <a  href="{% url 'Buscar Comida' %}">Buscar Comida</a>
+        </button> &nbsp; &nbsp;&nbsp;
+        <button type="button" class="btn btn-outline-info">
+            <a href="{% url 'Actualizar Comida' comida_id=comida.id %}">Actualizar Comida</a>
+        </button> &nbsp; &nbsp;&nbsp;
+        <button type="button" class="btn btn-outline-danger">
+            <a href="{% url 'Eliminar Comida' comida_id=comida.id %}">Eliminar Comida</a>
+        </button> &nbsp; &nbsp;&nbsp;
+                
+    </div>
+
+</div>
+{% endfor %}
+
+{% endblock %}

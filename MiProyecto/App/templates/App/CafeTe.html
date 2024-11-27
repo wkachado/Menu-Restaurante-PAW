@@ -1,0 +1,44 @@
+{% extends 'App/base.html' %}
+
+{% load static %}
+
+{% block title %}
+    Cafe/Te
+{% endblock  %}
+
+{% block codigoDinamico %}
+<div class="container"transition-style="in:wipe:up">
+    <h1> Cafe/Te </h1> <br> <br> <br>
+{% for cafete in cafete %}
+    <div class="container"transition-style="in:wipe:up">
+        <table class="table table-hover text-center">
+            <tbody>
+                <th scope="col">ID</th>
+                <th scope="col">Nombre </th>
+                <th scope="col">Precio </th>
+                <tr class="table-secondary text-center">
+                    <th>{{ cafete.id }}</th>
+                    <td>{{ cafete.nombre }}</td>
+                    <td>{{ cafete.precio }}</td>
+            </tbody>
+        </table>
+    </div>
+    <div class="container">
+        <button type="button" class="btn btn-outline-success">
+            <a href="{% url 'Crear CafeTe' %}">Nueva Cafe/Te</a>
+        </button> &nbsp; &nbsp;&nbsp;
+        <button type="button" class="btn btn-outline-primary">
+            <a href="{% url 'Buscar CafeTe' %}">Buscar CafeTe</a>
+        </button> &nbsp; &nbsp;&nbsp;
+        <button type="button" class="btn btn-outline-info">
+            <a href="{% url 'Actualizar CafeTe' cafete_id=cafete.id %}">Actualizar CafeTe</a>
+        </button> &nbsp; &nbsp;&nbsp;
+        <button type="button" class="btn btn-outline-danger">
+            <a href="{% url 'Eliminar CafeTe' cafete_id=cafete.id %}">Eliminar Cafe/Te</a>
+        </button> &nbsp; &nbsp;&nbsp;
+    </div>
+
+</div>
+{% endfor %}
+
+{% endblock %}

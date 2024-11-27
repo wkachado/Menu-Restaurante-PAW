@@ -1,0 +1,92 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://bootswatch.com/5/cyborg/bootstrap.min.css" rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="{% static 'App/styles.css' %}" rel="stylesheet" />
+    <link rel="icon" href="{% static 'App/imagenes/favicon.jpg' %}" />
+    <title>
+        {% block title %}
+        Home page
+        {% endblock title %}
+    </title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
+        <div class="container-fluid">
+            <div class="collapse navbar-collapse" id="navbarColor01">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="{% url 'Principal' %}">Principal
+                            <span class="visually-hidden">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'Registro' %}">Registrarse</a>
+                    </li>
+                    <li class="nav-item">
+                    </li>
+                    
+                    {% if request.user.is_authenticated %}
+                    <!-- Links para usuarios logueados -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'Mesa' %}">Mesas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'Bebidas' %}">Bebidas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'Comida' %}">Comidas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'Pedido' %}">Pedidos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'Categoria' %}">Categoria</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'Guarnicion' %}">Guarnicion</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'CafeTe' %}">Cafe/Te</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'Postre' %}">Postres</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'Adicional' %}">Adicional</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+                    </li>
+                    {% else %}
+                    <!-- Links para usuarios no logueados -->
+                    <a class="nav-link" href="{% url 'Crear Pedido Cliente' %}">Pedido Cliente</a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'login' %}">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'About' %}">Acerca de Nosotros</a> <!-- Solo visible si no está logueado -->
+                    </li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        {% if request.user.is_authenticated %}
+        <h2>¡Hola, {{ request.user.username }}!</h2>
+        <a href="{% url 'logout' %}">Cerrar sesión</a>
+        {% else %}
+        <h2>No has iniciado sesión. <a href="{% url 'login' %}">Inicia sesión aquí</a></h2>
+        {% endif %}
+    </div><br><br><br>
+    
+    {% block codigoDinamico %}
+    {% endblock %}
+</body>
+</html>

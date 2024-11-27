@@ -1,0 +1,59 @@
+{% extends 'App/base.html' %}
+
+{% load static %}
+
+{% block title %}
+    Cliente pedido
+{% endblock %}
+
+{% block codigoDinamico %}
+<div class="container"transition-style="in:wipe:up">
+    <h1>Cliente pedido</h1> <br><br><br>
+    {% for pedido_cliente in pedido_cliente %}
+    <div class="container"transition-style="in:wipe:up">
+        <table class="table table-hover text-center">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Mesa</th>
+                    <th scope="col">Plato Principal</th>
+                    <th scope="col">Adicional Plato</th>
+                    <th scope="col">Bebida</th>
+                    <th scope="col">Adicional Bebida</th>
+                    <th scope="col">Guarnición</th>
+                    <th scope="col">Adicional Guarnición</th>
+                    <th scope="col">Postre</th>
+                    <th scope="col">Adicional Postre</th>
+                    <th scope="col">Café/Té</th>
+                    <th scope="col">Adicional Café/Té</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="table-secondary text-center">
+                    <td>{{ pedido_cliente.id }}</td>
+                    <td>{{ pedido_cliente.mesa.numero_mesa }}</td>
+                    <td>{{ pedido_cliente.plato_principal.nombre }}</td>
+                    <td>{% if pedido_cliente.adicional_plato_principal %}{{ pedido_cliente.adicional_plato_principal.nombre }}{% else %}N/A{% endif %}</td>
+                    <td>{{ pedido_cliente.bebida.nombre }}</td>
+                    <td>{% if pedido_cliente.adicional_bebida %}{{ pedido_cliente.adicional_bebida.nombre }}{% else %}N/A{% endif %}</td>
+                    <td>{% if pedido_cliente.guarnicion %}{{ pedido_cliente.guarnicion.nombre }}{% else %}N/A{% endif %}</td>
+                    <td>{% if pedido_cliente.adicional_guarnicion %}{{ pedido_cliente.adicional_guarnicion.nombre }}{% else %}N/A{% endif %}</td>
+                    <td>{% if pedido_cliente.postre %}{{ pedido_cliente.postre.nombre }}{% else %}N/A{% endif %}</td>
+                    <td>{% if pedido_cliente.adicional_postre %}{{ pedido_cliente.adicional_postre.nombre }}{% else %}N/A{% endif %}</td>
+                    <td>{% if pedido_cliente.cafe_te %}{{ pedido_cliente.cafe_te.nombre }}{% else %}N/A{% endif %}</td>
+                    <td>{% if pedido_cliente.adicional_cafe_te %}{{ pedido_cliente.adicional_cafe_te.nombre }}{% else %}N/A{% endif %}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <div class="container">
+        <button type="button" class="btn btn-outline-success">
+            <a href="{% url 'Crear Pedido Cliente' %}">Nuevo Pedido</a>
+        </button> &nbsp; &nbsp;&nbsp;
+        <button type="button" class="btn btn-outline-secondary">
+            <a href="{% url 'Mostrar Pedidos Cliente' %}">Ver Mi Pedido</a>
+        </button> &nbsp; &nbsp;&nbsp;
+    </div>
+</div>
+{% endblock %}

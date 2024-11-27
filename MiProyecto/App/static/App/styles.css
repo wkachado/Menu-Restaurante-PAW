@@ -1,0 +1,854 @@
+/* Contenedor principal del formulario con bordes redondeados y gradiente animado */
+.form-container .container {
+    width: 100%;
+    max-width: 350px;
+    background: linear-gradient(45deg, rgba(0, 81, 255, 0.8), rgba(0, 255, 255, 0.8)); /* Gradiente entre azul fuerte y cian */
+    border: 2px solid rgba(0, 204, 255, 0.8);
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 0 15px rgba(0, 204, 255, 0.6);
+    text-align: center;
+    color: #fff; /* Texto en blanco para mayor contraste */
+    animation: gradientMovement 4s infinite linear; /* Animación para mover el gradiente */
+}
+
+/* Animación para el movimiento del gradiente */
+@keyframes gradientMovement {
+    0% {
+        background: linear-gradient(45deg, rgba(0, 81, 255, 0.8), rgba(0, 255, 255, 0.8));
+    }
+    50% {
+        background: linear-gradient(135deg, rgba(0, 255, 255, 0.8), rgba(0, 81, 255, 0.8));
+    }
+    100% {
+        background: linear-gradient(45deg, rgba(0, 81, 255, 0.8), rgba(0, 255, 255, 0.8));
+    }
+}
+
+/* Estilo para los campos de entrada con bordes y colores de gradiente */
+.form-container input[type="text"],
+.form-container input[type="password"],
+.form-container input[type="email"] {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 2px solid rgba(0, 204, 255, 0.8);
+    border-radius: 10px;
+    font-size: 16px;
+    background-color: rgba(0, 81, 255, 0.6); /* Fondo azul claro semitransparente */
+    color: rgb(0, 0, 0); /* Texto blanco en los campos */
+    transition: all 0.3s ease;
+}
+
+/* Efecto al enfocar los campos de entrada */
+.form-container input[type="text"]:focus,
+.form-container input[type="password"]:focus,
+.form-container input[type="email"]:focus {
+    border-color: rgba(0, 255, 255, 0.8); /* Borde cian al enfocar */
+    background-color: rgba(0, 255, 255, 0.3); /* Fondo más claro cuando se enfoca */
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.8); /* Sombra cian */
+    outline: none;
+}
+
+/* Estilo para el botón con gradiente animado */
+.button {
+    display: inline-block;
+    padding: 12px 30px;
+    background: linear-gradient(45deg, rgba(0, 81, 255, 0.8), rgba(0, 255, 255, 0.8));
+    border: 2px solid rgba(0, 204, 255, 0.8);
+    border-radius: 25px;
+    font-size: 16px;
+    color: #ffffff; /* Texto blanco */
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 204, 255, 0.6), 0 0 20px rgba(0, 255, 255, 0.6);
+    transition: all 0.3s ease;
+    animation: pulseButton 2s infinite; /* Pulsación suave */
+}
+
+/* Animación de pulsación para el botón */
+@keyframes pulseButton {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Efecto hover para el botón */
+.button:hover {
+    background: linear-gradient(45deg, rgba(0, 255, 255, 0.8), rgba(0, 81, 255, 0.8)); /* Cambio de gradiente */
+    box-shadow: 0 10px 20px rgba(0, 255, 255, 0.8), 0 0 30px rgba(0, 81, 255, 0.8);
+    transform: translateY(-5px); /* Levantamiento del botón al hacer hover */
+}
+
+/* Estilo para los enlaces dentro del formulario */
+.form-container a {
+    color: rgba(0, 255, 255, 0.8); /* Enlace en cian */
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+/* Efecto al pasar el ratón sobre los enlaces */
+.form-container a:hover {
+    color: rgba(0, 81, 255, 0.8); /* Enlace azul fuerte al pasar el ratón */
+    text-decoration: underline;
+}
+
+
+
+
+/* Estilos para el Banner */
+.banner {
+    text-align: center;
+    background: #000000; /* Fondo oscuro */
+    padding: 20px;
+    color: #00ffff; /* Color del texto en cian */
+    text-shadow: 2px 2px 10px #000000; /* Sombra oscura */
+    animation: pulse 1.5s infinite alternate, background-animation 10s infinite alternate;
+}
+
+/* Ajustes adicionales para el texto del banner */
+.banner h1 {
+    font-size: 3.5em; /* Aumentamos el tamaño para mayor impacto */
+    font-weight: bold;
+    color: #00ffff; /* Color del texto en cian */
+    text-shadow: 0px 0px 15px #00ffff, 0px 0px 30px #00cccc, 0px 0px 45px #00ffcc; /* Efecto de brillo en cian */
+    animation: sparkle 1.5s infinite alternate, float 3s infinite alternate;
+}
+
+@keyframes sparkle {
+    0% { text-shadow: 0px 0px 15px  #000080, 0px 0px 30px  #000080, 0px 0px 45px  #000080; }
+    50% { text-shadow: 0px 0px 25px  #000080, 0px 0px 50px #000080, 0px 0px 70px  #000080; }
+    100% { text-shadow: 0px 0px 15px  #000080, 0px 0px 30px  #000080, 0px 0px 45px   #000080; }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.1); }
+}
+
+/* Nueva animación de fondo */
+@keyframes background-animation {
+    0% { background: #000000; }
+    50% { background: #000000; }
+    100% { background: #000000; }
+}
+
+/* Efecto de flotación para el texto */
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
+
+/* Navbar principal con fondo oscuro, bordes redondeados y ajuste completo del fondo */
+.navbar {
+    background: #000000 !important; /* Fondo negro */
+    padding: 10px 15px !important; /* Reducir padding para más espacio */
+    border-radius: 30px !important; /* Bordes redondeados más pronunciados */
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5) !important; /* Sombra intensa */
+    transition: all 0.3s ease !important;
+    width: 100%; /* Asegura que el navbar ocupe todo el ancho */
+    box-sizing: border-box; /* Incluye el padding y border dentro del tamaño total */
+    overflow: hidden; /* Esto asegura que todo el contenido quede dentro de los bordes */
+}
+
+/* Enlaces en la navbar */
+.navbar-nav .nav-link {
+    color: #ffffff !important; /* Color blanco para los enlaces */
+    font-size: 0.9em !important; /* Reducir tamaño de letra */
+    margin: 0 5px !important; /* Reducir margen entre los enlaces */
+    padding: 8px 12px !important; /* Reducir padding para más espacio */
+    border-radius: 25px !important; /* Bordes redondeados */
+    font-weight: bold !important;
+    position: relative !important;
+    background: transparent !important; /* Fondo transparente por defecto */
+    box-shadow: none !important; /* Sin sombra al inicio */
+    transition: all 0.3s ease !important;
+    overflow: hidden !important;
+    white-space: nowrap; /* Evita que el texto se rompa en varias líneas */
+}
+
+/* Efecto de brillo en los enlaces al hacer hover */
+.navbar-nav .nav-link::before {
+    content: '' !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: -100% !important;
+    width: 200% !important;
+    height: 100% !important;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0)) !important;
+    transition: all 0.3s ease !important;
+    transform: skewX(-20deg) !important;
+    z-index: -1 !important;
+}
+
+/* Movimiento de brillo al hacer hover */
+.navbar-nav .nav-link:hover::before {
+    left: 100% !important;
+    transition: all 0.5s ease !important;
+}
+
+/* Estilo de los enlaces al hacer hover */
+.navbar-nav .nav-link:hover {
+    color: #ffffff !important;
+    background: linear-gradient(90deg, rgba(0, 255, 136, 0.6), rgba(0, 204, 255, 0.8)) !important; /* Fondo degradado al hacer hover */
+    transform: scale(1.1) !important;
+    box-shadow: 0px 0px 15px rgba(0, 255, 136, 0.6), 0px 0px 25px rgba(0, 204, 255, 0.8) !important; /* Efecto de brillo */
+}
+
+/* Efecto de hover en la navbar completa */
+.navbar:hover {
+    transform: scale(1.02) !important;
+    box-shadow: 0px 10px 25px rgba(0, 255, 136, 0.6), 0px 5px 20px rgba(0, 204, 255, 0.8) !important;
+}
+
+/* Asegurarse que el contenido del navbar se ajuste correctamente */
+.navbar-nav {
+    display: flex;
+    justify-content: space-evenly; /* Distribuir el espacio entre los elementos de manera uniforme */
+    align-items: center; /* Centrar los enlaces verticalmente */
+    width: 100%; /* Asegura que ocupe todo el ancho */
+    flex-wrap: nowrap; /* Evita que los elementos se acomoden en varias líneas */
+}
+
+/* Opcional: Si se requiere que el navbar sea más compacto en pantallas pequeñas */
+@media (max-width: 768px) {
+    .navbar-nav {
+        flex-direction: row; /* Asegura que los elementos estén en una fila */
+        flex-wrap: wrap; /* Deja que los elementos se acomoden cuando no haya suficiente espacio */
+        justify-content: space-between; /* Asegura que los elementos se distribuyan correctamente */
+    }
+}
+
+
+
+/*recuadro en las imagenes */
+.carousel-caption {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: rgb(255, 255, 255);
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 15px 25px;
+    border-radius: 10px;
+    z-index: 10;
+}
+
+
+/* Zoom en la imagen al hacer hover */
+.carousel-item img:hover {
+    transform: scale(1.1); /* Aumenta la imagen en un 10% */
+}
+
+
+/* Testimonio con animación de degradado dinámico, neón y zoom */
+.testimonio {
+    text-align: center;
+    font-style: italic;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 12px; /* Bordes más suaves */
+    background: linear-gradient(90deg, rgba(0, 0, 128, 1), rgba(0, 204, 255, 0.8)); /* Degradado inicial */
+    color: white; /* Color del texto en blanco */
+    text-shadow: 0 0 10px rgba(0, 0, 128, 1); /* Efecto de brillo suave en el texto */
+    box-shadow: 0 8px 16px rgba(0, 0, 128, 1), 0 0 15px rgba(0, 204, 255, 0.5); /* Sombra con efecto neón */
+    animation: glowTestimonio 4s ease-in-out infinite, moveTestimonio 8s ease-in-out infinite; /* Animaciones combinadas */
+    transition: transform 0.3s ease-in-out; /* Suaviza las transiciones al interactuar */
+}
+
+/* Animación para el brillo dinámico */
+@keyframes glowTestimonio {
+    0% {
+        box-shadow: 0 8px 16px rgba(0, 0, 128, 1), 0 0 15px rgba(0, 204, 255, 0.5);
+        background: linear-gradient(90deg, rgba(0, 0, 128, 1), rgba(0, 204, 255, 0.8));
+    }
+    50% {
+        box-shadow: 0 12px 24px rgba(0, 204, 255, 0.8), 0 0 30px rgba(0, 0, 128, 1);
+        background: linear-gradient(90deg, rgba(0, 204, 255, 0.8),rgba(0, 0, 128, 1)); /* Invertimos el gradiente */
+    }
+    100% {
+        box-shadow: 0 8px 16px rgba(0, 0, 128, 1), 0 0 15px rgba(0, 204, 255, 0.5);
+        background: linear-gradient(90deg, rgba(0, 0, 128, 1), rgba(0, 204, 255, 0.8));
+    }
+}
+
+/* Movimiento de testimonio */
+@keyframes moveTestimonio {
+    0% {
+        transform: translateY(-10px); /* Movimiento hacia arriba */
+    }
+    50% {
+        transform: translateY(10px); /* Movimiento hacia abajo */
+    }
+    100% {
+        transform: translateY(-10px); /* Vuelve a la posición inicial */
+    }
+}
+
+/* Hover para un efecto interactivo */
+.testimonio:hover {
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño */
+    transition: transform 0.3s ease-in-out;
+}
+
+
+
+/* Oferta con animación de degradado dinámico y neón */
+.oferta {
+    text-align: center;
+    font-weight: bold;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 12px; /* Bordes más suaves */
+    background: linear-gradient(90deg, rgba(0, 0, 128, 1), rgba(0, 204, 255, 0.8)); /* Degradado inicial */
+    color: white; /* Color del texto en blanco */
+    text-shadow: 0 0 10px rgba(0, 0, 128, 1); /* Efecto de brillo suave en el texto */
+    box-shadow: 0 8px 16px rgba(0, 0, 128, 1), 0 0 15px rgba(0, 204, 255, 0.5); /* Sombra con efecto neón */
+    animation: glowOferta 4s ease-in-out infinite, moveOferta 8s ease-in-out infinite; /* Animaciones combinadas */
+}
+
+/* Animación para el brillo dinámico */
+@keyframes glowOferta {
+    0% {
+        box-shadow: 0 8px 16px rgba(0, 0, 128, 1), 0 0 15px rgba(0, 204, 255, 0.5);
+        background: linear-gradient(90deg, rgba(0, 0, 128, 1),rgba(0, 204, 255, 0.8));
+    }
+    50% {
+        box-shadow: 0 12px 24px rgba(0, 204, 255, 0.8), 0 0 30px rgba(0, 0, 128, 1);
+        background: linear-gradient(90deg, rgba(0, 204, 255, 0.8),rgba(0, 0, 128, 1)); /* Invertimos el gradiente */
+    }
+    100% {
+        box-shadow: 0 8px 16px rgba(0, 0, 128, 1), 0 0 15px rgba(0, 204, 255, 0.5);
+        background: linear-gradient(90deg, rgba(0, 0, 128, 1), rgba(0, 204, 255, 0.8));
+    }
+}
+
+/* Movimiento de oferta */
+@keyframes moveOferta {
+    0% {
+        transform: translateY(-10px); /* Movimiento hacia arriba */
+    }
+    50% {
+        transform: translateY(10px); /* Movimiento hacia abajo */
+    }
+    100% {
+        transform: translateY(-10px); /* Vuelve a la posición inicial */
+    }
+}
+
+/* Hover para un efecto interactivo */
+.oferta:hover {
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño */
+    transition: transform 0.3s ease-in-out;
+}
+
+
+/* Estilos para la sección de Formas de Pago */
+.forma-de-pago {
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos para las tarjetas de preguntas frecuentes */
+.card {
+    background-color: rgba(0, 0, 128, 1); /* Color inicial */
+    transition: background-color 0.5s ease; /* Transición suave para el cambio de color */
+    color: white; /* Texto blanco en las tarjetas */
+}
+
+/* Cambiar el color al pasar el mouse */
+.card:hover {
+    background-color: rgba(0, 0, 15, 0.5); /* Color al pasar el mouse */
+}
+
+/* Estilos para el fondo de las tarjetas */
+.paso {
+    background: linear-gradient(270deg, rgba(0, 123, 255, 0.8), rgba(0, 0, 128, 1), rgb(0, 129, 119));
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    border-radius: 8px;
+    color: white; /* Texto blanco en las tarjetas con clase "paso" */
+}
+
+/* Animación del fondo */
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Estilos para la sección de Preguntas Frecuentes */
+.faq {
+    margin-top: 40px;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #000000; /* Fondo negro para la FAQ */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    color: white; /* Texto blanco en la sección FAQ */
+}
+
+/* Estilos para los botones de las preguntas */
+.btn-link {
+    color: #ffffff; /* Texto blanco para los botones */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.btn-link:hover {
+    color: #ffffff; /* Color blanco al pasar el ratón */
+}
+
+/* Estilos para los encabezados y párrafos dentro de la FAQ */
+.faq h2,
+.faq p {
+    color: white; /* Asegurarse de que los encabezados y párrafos sean blancos */
+}
+
+/* Estilos para los botones de las preguntas */
+.btn-link {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.btn-link:hover {
+    color: #ffffff; /* Color más oscuro al pasar el ratón */
+}
+
+
+
+/* Estilo general del footer */
+footer {
+    background: rgba(0, 0, 0, 0.9);
+    color: #ffffff;
+    padding: 30px 20px;
+    text-align: center;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    position: relative;
+    border-top: 3px solid transparent;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    margin: 0 auto;
+    border: 3px solid transparent;
+    background-image: linear-gradient(rgb(3, 3, 3), rgb(0, 0, 0)),
+                    radial-gradient(circle, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8));
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+    animation: rgbGlow 5s infinite alternate; /* Duración más lenta */
+}
+
+/* Título del footer */
+footer h5 {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    animation: bounceIn 2s ease-out;
+    text-align: center; /* Centrado del título */
+}
+
+/* Centrar las columnas */
+footer .row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+/* Enlaces en el footer */
+footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    display: inline-flex; /* Centrar los elementos */
+    gap: 20px;
+}
+
+footer ul li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+footer ul li a {
+    color: #fff;
+    font-size: 1.1em;
+    text-decoration: none;
+    padding: 5px;
+    transition: all 0.3s ease;
+    border-bottom: 2px solid transparent;
+}
+
+footer ul li a:hover {
+    color: #000000;
+    border-bottom: 2px solid #000000;
+    transform: scale(1.05);
+    text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.7);
+}
+
+/* Texto adicional en el footer */
+footer .footer-text {
+    font-size: 1.2em;
+    margin-top: 15px;
+    color: #fff;
+    letter-spacing: 1px;
+    animation: fadeIn 2s ease-in-out;
+    opacity: 0.8;
+}
+
+/* Enlaces adicionales en el footer */
+footer .footer-link {
+    display: inline-block;
+    color: #fff;
+    font-size: 1.1em; /* Tamaño de fuente ligeramente mayor */
+    margin: 10px 20px; /* Espaciado ajustado */
+    text-decoration: none;
+    padding: 10px 15px; /* Aumento en el padding */
+    border-radius: 25px; /* Bordes más redondeados */
+    background-color: rgba(0, 119, 255, 0.1); /* Fondo sutil para los enlaces */
+    transition: all 0.3s ease;
+}
+
+footer .footer-link:hover {
+    background-color: rgb(255, 255, 255); /* Fondo más claro al pasar el mouse */
+    color: #00ccff; /* Color del texto al pasar el mouse */
+    transform: scale(1.1); /* Aumento más notable */
+    box-shadow: 0px 8px 20px rgba(30, 255, 0, 0.2); /* Sombra más pronunciada */
+}
+
+/* Efecto RGB Glow para el contorno */
+@keyframes rgbGlow {
+    0% {
+        border-color:rgba(0, 0, 128, 1);
+
+        box-shadow: 0 0 10px rgba(0, 0, 128, 1);
+    }
+    25% {
+        border-color: rgba(0, 255, 255, 1);
+        box-shadow: 0 0 10px rgba(0, 255, 255, 0.75);
+    }
+    50% {
+        border-color: rgb(0, 255, 170);
+        box-shadow: 0 0 10px rgba(0, 255, 128, 0.75);
+    }
+    75% {
+        border-color: rgb(0, 81, 255);
+        box-shadow: 0 0 10px rgba(0, 102, 255, 0.75);
+    }
+    100% {
+        border-color: rgba(0, 0, 128, 1);
+        box-shadow: 0 0 10px rgba(0, 0, 128, 1);
+
+    }
+}
+
+/* Estilo base para los íconos */
+.icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 24px;
+    border: 2px solid transparent;
+    animation: rgbGlow 6s infinite alternate; /* Duración ajustada a 6s */
+    transition: transform 0.3s ease;
+}
+
+/* Colores específicos para cada red social */
+.icon-whatsapp {
+    background-color: #25D366;
+}
+
+.icon-email {
+    background-color: #BB001B;
+}
+
+.icon-ubicacion {
+    background-color: #FF5722;
+}
+
+.icon-facebook {
+    background-color: #3B5998;
+}
+
+.icon-instagram {
+    background: radial-gradient(circle at 30% 30%, #feda77, #d62976, #4f5bd5);
+}
+
+
+
+/* Contenedor principal con efecto de brillo en movimiento */
+.contacto {
+    background-color: #000000; /* Fondo oscuro */
+    padding: 30px;
+    border-radius: 8px;
+    position: relative; /* Necesario para el pseudo-elemento */
+    overflow: hidden; /* Oculta el exceso del brillo */
+    z-index: 0; /* Asegura que el contenido esté por encima del pseudo-elemento */
+}
+
+/* Efecto animado de brillo para el borde */
+.contacto::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 300%;
+    height: 300%;
+    background: linear-gradient(120deg, transparent, #000080, transparent);
+    animation: desplazamientoBrillo 3s linear infinite;
+    z-index: -1; /* Detrás del contenido */
+    filter: blur(10px);
+}
+
+/* Animación de movimiento */
+@keyframes desplazamientoBrillo {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+/* Título con un brillo continuo */
+.contacto h3 {
+    color: #ffffff;
+    text-shadow: 0 0 5px #000080, 0 0 15px #000080, 0 0 30px #000080;
+    animation: brilloTitular 2s infinite alternate;
+}
+
+/* Animación de brillo tenue */
+@keyframes brilloTitular {
+    0% {
+        text-shadow: 0 0 10px #000080, 0 0 20px #77fdc5, 0 0 40px#000080;
+    }
+    100% {
+        text-shadow: 0 0 5px #000080, 0 0 15px #77fdc5, 0 0 30px #000080;
+    }
+}
+
+/* Campos del formulario con borde animado */
+.form-control {
+    border: 2px solid transparent;
+    background: linear-gradient(#fffdfd, #ffffff) padding-box, linear-gradient(90deg, #000080, #77fdc5, #000080) border-box;
+    color: #050505;
+    border-radius: 4px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+/* Botón con efecto de brillo */
+.btn-primary {
+    background: linear-gradient(90deg,#000080,#00ced1, #000080);
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 200%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    animation: desplazamientoBrillo 2s linear infinite;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(90deg, #000080,#77fdc5, #000080);
+    color: #000000;
+}
+
+/* Botón sin exceso de brillo en texto */
+.btn-primary span {
+    position: relative;
+    z-index: 2; /* Coloca el texto por encima del efecto */
+}
+
+
+/* Estilos para la sección "Sobre Nosotros" */
+.sobre-nosotros {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 30px;
+    background: linear-gradient(135deg, rgba(0, 123, 255, 0.7), rgba(40, 167, 69, 0.7)), url('{% static "App/imagenes/fondo-restaurante.jpg" %}');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    overflow: hidden;
+    animation: fadeIn 1s ease-out;
+}
+
+/* Animación de entrada */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+
+/* Estilo general para la sección "Sobre Nosotros" */
+.sobre-nosotros {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 30px;
+    background: linear-gradient(135deg, rgba(0, 153, 255, 0.7), rgba(0, 195, 255, 0.7)), url('{% static "App/imagenes/fondo-restaurante.jpg" %}');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    overflow: hidden;
+    animation: fadeIn 1s ease-out;
+}
+
+/* Animación de entrada */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Títulos principales */
+.sobre-nosotros h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Títulos secundarios */
+.sobre-nosotros h2 {
+    font-size: 2.5rem;
+    margin-top: 30px;
+    color: #ffe600; /* Amarillo brillante */
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+
+/* Títulos terciarios */
+.sobre-nosotros h3 {
+    font-size: 2rem;
+    margin-top: 20px;
+    color: #fbff00; /* Rojo oscuro */
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Párrafos */
+.sobre-nosotros p {
+    font-size: 1.1rem;
+    text-align: justify;
+    margin-bottom: 20px;
+    line-height: 1.8;
+    color: #f1f1f1;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Estilo de listas */
+.sobre-nosotros ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.sobre-nosotros ul li {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    color: #f1f1f1;
+}
+
+.sobre-nosotros ul li::before {
+    content: '';
+    margin-right: 10px;
+    color: #ffe600;
+}
+
+/* Texto de agradecimiento */
+.sobre-nosotros strong {
+    color: #ffe600;
+    font-size: 1.2rem;
+    text-align: center;
+    display: block;
+    margin-top: 30px;
+}
+
+/* Efectos en los enlaces */
+.sobre-nosotros a {
+    color: #ffe600;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.sobre-nosotros a:hover {
+    color: #d9534f;
+    text-decoration: underline;
+}
+
+/* Efecto de sombra para el contenedor */
+.sobre-nosotros:hover {
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+/* Responsive: Asegurar que el texto no se sobreponga en pantallas pequeñas */
+@media (max-width: 768px) {
+    .sobre-nosotros h1 {
+        font-size: 2.5rem;
+    }
+    .sobre-nosotros h2 {
+        font-size: 2rem;
+    }
+    .sobre-nosotros h3 {
+        font-size: 1.8rem;
+    }
+    .sobre-nosotros p, .sobre-nosotros ul li {
+        font-size: 1rem;
+    }
+}

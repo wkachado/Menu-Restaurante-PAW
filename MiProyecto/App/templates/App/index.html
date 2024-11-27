@@ -1,0 +1,359 @@
+{% extends 'App/base.html' %}
+
+{% load static %}
+
+{% block title %}
+    Principal
+{% endblock title %}
+
+{% block codigoDinamico %}
+
+<div class="container">
+
+    <div class="banner">
+        <h1>Bienvenidos a French!!</h1>
+        <p>Que nuestra comida sea de su agrado.</p>
+    </div>
+    <br> <br>
+
+<!-- Carousel de imágenes -->
+<div id="imagenesCarousel" class="carousel slide" data-ride="carousel" data-interval="3000">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <div class="col-8 mx-auto">
+                <img src="{% static 'App/imagenes/asado.jpg' %}" class="d-block w-100" alt="Testimonio Nuestras Carnes.">
+                <div class="carousel-caption d-block">
+                    <p>"Nuestras Carnes."</p>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class="col-8 mx-auto">
+                <img src="{% static 'App/imagenes/pastas.jpg' %}" class="d-block w-100" alt="Testimonio Nuestras Pastas.">
+                <div class="carousel-caption d-block">
+                    <p>"Nuestras Pastas."</p>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class="col-7 mx-auto">
+                <img src="{% static 'App/imagenes/cafe.jpg' %}" class="d-block w-100" alt="Testimonio Nuestras Bebidas.">
+                <div class="carousel-caption d-block">
+                    <p>"Nuestros Café."</p>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class="col-8 mx-auto">
+                <img src="{% static 'App/imagenes/flan.jpg' %}" class="d-block w-100" alt="Testimonio Nuestros Flanes.">
+                <div class="carousel-caption d-block">
+                    <p>"Nuestros Flanes."</p>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class="col-7 mx-auto">
+                <img src="{% static 'App/imagenes/mousse.jpg' %}" class="d-block w-100" alt="Testimonio Nuestros Helados.">
+                <div class="carousel-caption d-block">
+                    <p>"Nuestros Helados."</p>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class="col-8 mx-auto">
+                <img src="{% static 'App/imagenes/bebidas.jpg' %}" class="d-block w-100" alt="Testimonio Nuestras Bebidas.">
+                <div class="carousel-caption d-block">
+                    <p>"Nuestras Bebidas."</p>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class="col-8 mx-auto">
+                <img src="{% static 'App/imagenes/tragos.jpg' %}" class="d-block w-100" alt="Testimonio Nuestros Tragos.">
+                <div class="carousel-caption d-block">
+                    <p>"Nuestros Tragos."</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <!-- Carousel de Testimonios -->
+    <div class="carousel-container mt-5">
+        <h2 class="text-center">Opiniones</h2>
+        <div id="testimoniosCarousel" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="testimonio">
+                        <p>"Todo muy rico!"</p>
+                        <p><strong>- Jose Fernandez</strong></p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="testimonio">
+                        <p>"Excelente la comida y la atención, sin dudas volveremos!"</p>
+                        <p><strong>- Mariana Gimenez</strong></p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="testimonio">
+                        <p>"Muy buena la comida y buenos precios"</p>
+                        <p><strong>-Sebastian Fernandez</strong></p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="testimonio">
+                        <p>"Todo muy rico y muy lindo lugar"</p>
+                        <p><strong>-Belen Martinez</strong></p>
+                    </div>  
+                </div>
+            </div>
+        </div>
+
+        <div class="cta mt-5 text-center">
+            <h2>¡Nuestras Promociones!</h2>
+        </div>
+
+        <!-- Carousel de Ofertas -->
+        <div id="ofertasCarousel" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="oferta">
+                        <p>¡15% de descuento Abonando en efectivo!</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="oferta">
+                        <p>¡10% de descuento abonando con debito/transferencia!</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="oferta">
+                        <p>¡20% de descuento todos los domingos con Cuenta Dni!</p>
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#ofertasCarousel" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Anterior</span>
+            </a>
+            <a class="carousel-control-next" href="#ofertasCarousel" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Siguiente</span>
+            </a>
+        </div>
+    </div>
+
+<!-- Formas de Pago -->
+<div class="forma-de-pago mt-5">
+    <h2 class="text-center mb-4">Formas de Pago</h2>
+    <div class="row text-center">
+        <div class="col-md-4">
+            <div class="card h-100 shadow-lg">
+                <div class="card-body paso bg-primary text-white rounded">
+                    <h3 class="card-title">1. Pago en Efectivo</h3>
+                    <p class="card-text">Pagando en efectivo tendrás un 15% de descuento.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card h-100 shadow-lg">
+                <div class="card-body paso bg-success text-white rounded">
+                    <h3 class="card-title">2. Pago con Tarjeta de Débito o QR</h3>
+                    <p class="card-text">Pagando con débito o QR, el precio del menú.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card h-100 shadow-lg">
+                <div class="card-body paso bg-danger text-white rounded">
+                    <h3 class="card-title">3. Pago con Tarjeta de Crédito</h3>
+                    <p class="card-text">Pagando con crédito tendrás un recargo del 10%.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<br><br><br>
+
+<!-- Preguntas Frecuentes -->
+<div class="faq mt-5">
+    <h2>Cómo se usa y Preguntas Frecuentes</h2>
+    <div id="accordion">
+        <div class="card paso">
+            <div class="card-header" id="headingFour">
+                <div class="mb-0">
+                    <button class="btn btn-link" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
+                        ¿Cómo creo mi pedido?
+                    </button>
+                </div>
+            </div>
+            <div id="collapseFour" class="collapse show" aria-labelledby="headingFour" data-parent="#accordion">
+                <div class="card-body">
+                    <p>Primero tienes que hacer clic en Pedido Cliente.</p>
+                    <p>Llena los campos del formulario con lo que deseas ordenar y, al finalizar tu pedido, haz clic en el botón crear pedido.</p>
+                    <p>Para ver tu pedido, haz clic en el botón Ver mi Pedido.</p>
+                </div>
+            </div>
+        </div>
+        <div class="card paso"> 
+            <div class="card-header" id="headingFive">
+                <div class="mb-0">
+                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                        ¿Puedo modificar o eliminar mi pedido?
+                    </button>
+                </div>
+            </div>
+            <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordion">
+                <div class="card-body">
+                    No, para hacer esas acciones tienes que llamar al mozo.
+                </div>
+            </div>
+        </div>
+        <div class="card paso">
+            <div class="card-header" id="headingOne">
+                <div class="mb-0">
+                    <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        ¿Qué platos ofrecen?
+                    </button>
+                </div>
+            </div>
+            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                <div class="card-body">
+                    Ofrecemos una gran variedad de carnes, pastas, ensaladas, postres y bebidas.
+                </div>
+            </div>
+        </div>
+        <div class="card paso"> 
+            <div class="card-header" id="headingTwo">
+                <div class="mb-0">
+                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        ¿Se pueden hacer reservas?
+                    </button>
+                </div>
+            </div>
+            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                <div class="card-body">
+                    Sí, puedes hacer reservas llamándonos al número de contacto o a través de nuestra página web.
+                </div>
+            </div>
+        </div>
+        <div class="card paso"> 
+            <div class="card-header" id="headingThree">
+                <div class="mb-0">
+                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        ¿Realizan entregas a domicilio?
+                    </button>
+                </div>
+            </div>
+            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                <div class="card-body">
+                    Sí, ofrecemos servicio de delivery para que disfrutes nuestra comida en la comodidad de tu casa.
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <!-- Mapa -->
+    <div class="contacto mt-5">
+        <h2>Encuentranos</h2>
+        <div class="row">
+            <div class="col-md-6">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d820.5046767202845!2d-58.623262792825685!3d-34.65423049439459!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcc77b5bc709f3%3A0x6d0b25505378c20b!2sCentro%20de%20formaci%C3%B3n%20laboral%20406!5e0!3m2!1ses-419!2sar!4v1726509119577!5m2!1ses-419!2sar" 
+                width="600" height="450" 
+                style="border:0;" allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mensajes -->
+    <div class="contacto mt-5">
+        <div class="row mt-4">
+            <div class="col-md-12">
+                <h3>Déjanos tu opinión</h3>
+                {% if messages %}
+                    {% for message in messages %}
+                        <div class="alert alert-info">{{ message }}</div>
+                    {% endfor %}
+                {% endif %}
+                <form action="{% url 'Contacto' %}" method="post">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" class="form-control" id="nombre" name="nombre" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="asunto">Asunto</label>
+                        <input type="text" class="form-control" id="asunto" name="asunto" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="mensaje">Mensaje</label>
+                        <textarea class="form-control" id="mensaje" name="mensaje" rows="3" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- pie de pagina -->
+    <footer class="mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>FRENCH</h5>
+                    <p>Contacto para reserva</p>
+                    <p><span class="icon icon-whatsapp"><i class="fab fa-whatsapp"></i></span> Teléfono: (11) 1234-5678</p>
+                    <p><span class="icon icon-ubicacion"><i class="fas fa-map-marker-alt"></i></span> Dirección: Calle falsa 1234</p>
+                    <p><span class="icon icon-email"><i class="fas fa-envelope"></i></span> Email: french.restaurante@gmail.com</p>
+                    <p>Horarios: Martes a Domingo 10:00 HS - 24:00 HS</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Enlaces Rápidos</h5>
+                    <div class="footer-links">
+                        <a href="{% url 'Politica Privacidad' %}" class="footer-link">Política de privacidad</a>
+                        <a href="{% url 'Terminos Condiciones' %}" class="footer-link">Términos y condiciones</a>
+                    </div>
+                    <p>&copy; <span id="currentYear"></span> French Restaurante. Todos los derechos reservados.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Redes Sociales</h5>
+                    <ul class="social-icons">
+                        <li><a href="https://web.facebook.com/profile.php?id=61568414618286" class="icon icon-facebook"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="https://www.instagram.com/french_restaurant2024/?igsh=MXZrN3RrNGZjNjZ0Mw%3D%3D" class="icon icon-instagram"><i class="fab fa-instagram"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script>
+    $('.carousel').carousel({
+        interval: 3000
+    });
+</script>
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet"/>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+
+
+{% endblock %}

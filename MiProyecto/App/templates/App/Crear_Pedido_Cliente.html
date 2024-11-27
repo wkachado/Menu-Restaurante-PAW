@@ -1,0 +1,67 @@
+{% extends 'App/base.html' %}
+
+{% load static %}
+
+{% block title %}
+    Crear Pedido Cliente
+{% endblock %}
+
+{% block codigoDinamico %}
+<div class="container">
+    <h1>Crear Pedido Cliente</h1>
+    <br>
+    <form method="POST" action="{% url 'Crear Pedido Cliente' %}">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="mesa">Mesa:</label>
+            {{ form.mesa }}
+        </div>
+        <div class="form-group">
+            <label for="plato_principal">Plato Principal:</label>
+            {{ form.plato_principal }}
+        </div>
+        <div class="form-group">
+            <label for="adicional_plato_principal">Adicional Plato Principal:</label>
+            {{ form.adicional_plato_principal }}
+        </div>
+        <div class="form-group">
+            <label for="guarnicion">Guarnición:</label>
+            {{ form.guarnicion }}
+        </div>
+        <div class="form-group">
+            <label for="adicional_guarnicion">Adicional Guarnición:</label>
+            {{ form.adicional_guarnicion }}
+        </div>
+        <div class="form-group">
+            <label for="bebida">Bebida:</label>
+            {{ form.bebida }}
+        </div>
+        <div class="form-group">
+            <label for="adicional_bebida">Adicional Bebida:</label>
+            {{ form.adicional_bebida }}
+        </div>
+        <div class="form-group">
+            <label for="postre">Postre:</label>
+            {{ form.postre }}
+        </div>
+        <div class="form-group">
+            <label for="adicional_postre">Adicional Postre:</label>
+            {{ form.adicional_postre }}
+        </div>
+        <div class="form-group">
+            <label for="cafe_te">Café/Té:</label>
+            {{ form.cafe_te }}
+        </div>
+        <div class="form-group">
+            <label for="adicional_cafe_te">Adicional Café/Té:</label>
+            {{ form.adicional_cafe_te }}
+        </div>
+        <br>
+        <button type="submit" class="btn btn-primary">Crear Pedido</button>
+    </form>
+    <br>
+    <button type="button" class="btn btn-outline-success">
+        <a href="{% url 'Mostrar Pedidos Cliente' %}">Ver Mi Pedido</a>
+    </button>
+</div>
+{% endblock %}

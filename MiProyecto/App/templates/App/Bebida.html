@@ -1,0 +1,44 @@
+{% extends 'App/base.html' %}
+
+{% load static %}
+
+{% block title %}
+    Bebidas
+{% endblock %}
+
+{% block codigoDinamico %}
+<div class="container"transition-style="in:wipe:up">
+    <h1> Bebidas </h1> <br> <br> <br>
+{% for bebida in bebida %}
+    <div class="container"transition-style="in:wipe:up">
+        <table class="table table-hover text-center">
+            <tbody>
+                <th scope="col">ID</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Precio</th>
+                <tr class="table-secondary text-center">
+                    <th>  {{ bebida.id }}</th>
+                    <td>  {{ bebida.nombre }}</td>
+                    <td> ${{ bebida.precio }}</td>
+            </tbody>
+        </table>
+    </div>
+    <div class="container">
+        <button type="button" class="btn btn-outline-success">
+            <a href="{% url 'Crear Bebida' %}">Nueva Bebida</a>
+        </button> &nbsp; &nbsp;&nbsp;
+        <button type="button" class="btn btn-outline-primary">
+            <a href="{% url 'Buscar Bebida' %}">Buscar Bebida</a>
+        </button> &nbsp; &nbsp;&nbsp;
+        <button type="button" class="btn btn-outline-info">
+            <a href="{% url 'Actualizar Bebida' bebida_id=bebida.id %}">Actualizar Bebidas</a>
+        </button> &nbsp; &nbsp;&nbsp;
+        <button type="button" class="btn btn-outline-danger">
+            <a href="{% url 'Eliminar Bebida' bebida_id=bebida.id %}">Eliminar Bebida</a>
+        </button> &nbsp; &nbsp;&nbsp;
+    </div>
+
+</div>
+{% endfor %}
+
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends 'App/base.html' %}
+
+{% load static %}
+
+{% block title %}
+    Guarniciones
+{% endblock %}
+
+{% block codigoDinamico %}
+<div class="container"transition-style="in:wipe:up">
+    <h1> Guarnicion </h1> <br> <br> <br>
+    {% for guarnicion in guarnicion %}
+    <div class="container"transition-style="in:wipe:up">
+        <table class="table table-hover text-center">
+            <tbody>
+                <th scope="col">ID</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Precio</th>
+                <tr class="table-secondary text-center">
+                    <td>{{ guarnicion.id }}</td>
+                    <td>{{ guarnicion.nombre }}</td>
+                    <td>{{ guarnicion.precio }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="container">
+        <button type="button" class="btn btn-outline-success">
+            <a href="{% url 'Crear Guarnicion' %}">Nueva guarnicion</a>
+        </button> &nbsp; &nbsp;&nbsp;
+        <button type="button" class="btn btn-outline-primary">
+            <a href="{% url 'Buscar Guarnicion' %}">Buscar Guarnicion</a>
+        </button> &nbsp; &nbsp;&nbsp;
+        <button type="button" class="btn btn-outline-info">
+            <a href="{% url 'Actualizar Guarnicion' guarnicion_id=guarnicion.id %}">Actualizar Guarnicion</a>
+        </button> &nbsp; &nbsp;&nbsp;
+        <button type="button" class="btn btn-outline-danger">
+            <a href="{% url 'Eliminar Guarnicion' guarnicion_id=guarnicion.id %}">Eliminar Guarnicion</a>
+        </button> &nbsp; &nbsp;&nbsp;
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

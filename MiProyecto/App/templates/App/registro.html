@@ -1,0 +1,30 @@
+{% extends 'App/base.html' %}
+
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+    Registro de Usuario
+{% endblock title %}
+
+{% block codigoDinamico %}
+<br><br><br>
+<div class="login-page">
+    <div class="form-container">
+        <div class="container text-center">
+            <h1>Registro de Usuario</h1>
+        </div>
+        <form method="post" class="container">
+            {% csrf_token %}
+            <div class="form-group">
+                {{ form|crispy }}
+            </div>
+            <button type="submit" class="magic-button">Registrar</button>
+        </form>
+        <br><br><br>
+        <div class="container text-center">
+            <p>¿Ya tienes una cuenta? <a href="{% url 'login' %}" class="link">Inicia sesión aquí</a></p>
+        </div>
+    </div>
+</div>
+{% endblock %}

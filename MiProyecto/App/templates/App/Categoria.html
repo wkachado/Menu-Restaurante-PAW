@@ -1,0 +1,42 @@
+{% extends 'App/base.html' %}
+
+{% load static %}
+
+{% block title %}
+    Categoria
+{% endblock %}
+
+{% block codigoDinamico %}
+<div class="container"transition-style="in:wipe:up">
+    <h1> Categorias </h1> <br> <br> <br>
+{% for categoria in categoria %}
+    <div class="container"transition-style="in:wipe:up">
+        <table class="table table-hover text-center">
+            <tbody>
+                <th scope="col">ID</th>
+                <th scope="col">Nombre</th>
+                <tr class="table-secondary text-center">
+                    <th>  {{ categoria.id }}</th>
+                    <td>  {{ categoria.nombre }}</td>
+            </tbody>
+        </table>
+    </div>
+    <div class="container">
+        <button type="button" class="btn btn-outline-success">
+            <a href="{% url 'Crear Categoria' %}">Nueva Categoria</a>
+        </button> &nbsp; &nbsp;&nbsp;
+        <button type="button" class="btn btn-outline-primary">
+            <a href="{% url 'Buscar Categoria' %}">Buscar Categoria</a>
+        </button> &nbsp; &nbsp;&nbsp;
+        <button type="button" class="btn btn-outline-info">
+            <a href="{% url 'Actualizar Categoria' categoria_id=categoria.id %}">Actualizar Categoria</a>
+        </button> &nbsp; &nbsp;&nbsp;
+        <button type="button" class="btn btn-outline-danger">
+            <a href="{% url 'Eliminar Categoria' categoria_id=categoria.id %}">Eliminar Categoria</a>
+        </button> &nbsp; &nbsp;&nbsp;
+    </div>
+
+</div>
+{% endfor %}
+
+{% endblock %}

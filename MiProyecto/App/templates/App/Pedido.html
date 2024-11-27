@@ -1,0 +1,69 @@
+{% extends 'App/base.html' %}
+
+{% load static %}
+
+{% block title %}
+    Pedidos
+{% endblock %}
+
+{% block codigoDinamico %}
+<div class="container"transition-style="in:wipe:up">
+    <h1>Pedidos</h1> <br> <br> <br>
+    {% for pedido in pedido %}
+        <div class="container"transition-style="in:wipe:up">
+            <table class="table table-hover text-center">
+                <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Mesa</th>
+                        <th scope="col">Plato Principal</th>
+                        <th scope="col">Adicional Plato</th>
+                        <th scope="col">Bebida</th>
+                        <th scope="col">Adicional Bebida</th>
+                        <th scope="col">Guarnición</th>
+                        <th scope="col">Adicional Guarnición</th>
+                        <th scope="col">Postre</th>
+                        <th scope="col">Adicional Postre</th>
+                        <th scope="col">Café/Té</th>
+                        <th scope="col">Adicional Café/Té</th>
+                        <th scope="col">Total</th>
+                        <th scope="col">Estado</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="table-secondary text-center">
+                        <td>{{ pedido.id }}</td>
+                        <td>{{ pedido.mesa.numero_mesa }}</td>
+                        <td>{{ pedido.plato_principal.nombre }}</td>
+                        <td>{% if pedido.adicional_plato_principal %}{{ pedido.adicional_plato_principal.nombre }}{% else %}N/A{% endif %}</td>
+                        <td>{{ pedido.bebida.nombre }}</td>
+                        <td>{% if pedido.adicional_bebida %}{{ pedido.adicional_bebida.nombre }}{% else %}N/A{% endif %}</td>
+                        <td>{% if pedido.guarnicion %}{{ pedido.guarnicion.nombre }}{% else %}N/A{% endif %}</td>
+                        <td>{% if pedido.adicional_guarnicion %}{{ pedido.adicional_guarnicion.nombre }}{% else %}N/A{% endif %}</td>
+                        <td>{% if pedido.postre %}{{ pedido.postre.nombre }}{% else %}N/A{% endif %}</td>
+                        <td>{% if pedido.adicional_postre %}{{ pedido.adicional_postre.nombre }}{% else %}N/A{% endif %}</td>
+                        <td>{% if pedido.cafe_te %}{{ pedido.cafe_te.nombre }}{% else %}N/A{% endif %}</td>
+                        <td>{% if pedido.adicional_cafe_te %}{{ pedido.adicional_cafe_te.nombre }}{% else %}N/A{% endif %}</td>
+                        <td>${{ pedido.total }}</td>
+                        <td>{% if pedido.entregado %}Entregado{% else %}No Entregado{% endif %}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="container">
+            <button type="button" class="btn btn-outline-success">
+                <a href="{% url 'Crear Pedido' %}">Nuevo Pedido</a>
+            </button> &nbsp; &nbsp;&nbsp;
+            <button type="button" class="btn btn-outline-primary">
+                <a href="{% url 'Buscar Pedido' %}">Buscar Pedido</a>
+            </button> &nbsp; &nbsp;&nbsp;
+            <button type="button" class="btn btn-outline-info">
+                <a href="{% url 'Actualizar Pedido' pedido_id=pedido.id %}">Actualizar Pedido</a>
+            </button> &nbsp; &nbsp;&nbsp;
+            <button type="button" class="btn btn-outline-danger">
+                <a href="{% url 'Eliminar Pedido' pedido_id=pedido.id %}">Eliminar Pedido</a>
+            </button> &nbsp; &nbsp;&nbsp;
+    
+    {% endfor %}
+</div>
+{% endblock %}

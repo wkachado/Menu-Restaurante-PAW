@@ -1,0 +1,43 @@
+{% extends 'App/base.html' %}
+
+{% load static %}
+
+{% block title %}
+    Buscar Bebidas
+{% endblock title %}
+
+{% block codigoDinamico %}
+
+<div class="container">
+    <br> <br> <br>
+    <form action="" method="get">
+
+        <input type="text" name="nombre" id="nombre" placeholder="Buscar Nombre Bebida">
+        <br> <br> <br>
+        <input type="submit" value="Buscar Bebida" class="btn btn-outline-primary">
+
+    </form>
+    <br> <br> <br>
+    {% if bebida %}
+
+        {% for bebida in bebida %}
+        <table class="table table-hover text-center">
+            <tbody>
+                <th scope="col">Nombre</th>
+                <th scope="col">ID</th>
+                <th scope="col">Precio</th>
+                <tr class="table-secondary text-center">
+                    <th>{{ bebida.nombre}}</th>
+                    <th>{{ bebida.id }}</th>
+                    <th>{{ bebida.precio }}</th>
+            </tbody>
+        </table>
+        {% endfor %}
+        
+    {% else %}
+    <h3>No hay resultados para su búsqueda.</h3>
+    {% endif %}
+    
+</div>
+
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends 'App/base.html' %}
+
+{% load static %}
+
+{% block title %}
+    Categoria
+{% endblock title %}
+{% block codigoDinamico %}
+
+<div class="container">
+    <br> <br> <br>
+    <form action="" method="get">
+        <input type="text" name="nombre" id="nombre" placeholder="buscar categoria">
+        <br> <br> <br>
+        <input type="submit" value="Buscar Categoria" class="btn btn-outline-light">
+    
+    </form>
+    <br> <br> <br>
+    {% if categoria %}
+
+        {% for categoria in categoria %}
+        <div class="container">
+        <table class="table table-hover text-center">
+            <tbody>
+                <th scope="col">ID</th>
+                <th scope="col">Nombre</th>
+                <tr class="table-secondary text-center">
+                    <th>{{ categoria.id }}</th>
+                    <th>{{ categoria.nombre }}</th>
+                </tbody>
+            </table>
+            {% endfor %}
+
+        {% else %}
+        <h3>No hay resultados</h3>
+        {% endif %}
+        
+</div>
+
+{% endblock %}

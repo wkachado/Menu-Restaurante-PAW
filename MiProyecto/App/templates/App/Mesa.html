@@ -1,0 +1,42 @@
+{% extends 'App/base.html' %}
+
+{% load static %}
+
+{% block title %}
+    Mesa
+{% endblock %}
+
+{% block codigoDinamico %}
+<div class="container"transition-style="in:wipe:up">
+    <h1> Mesas </h1> <br> <br> <br>
+{% for mesa in mesa %}
+    <div class="container"transition-style="in:wipe:up">
+        <table class="table table-hover text-center">
+            <tbody>
+                <th scope="col">ID</th>
+                <th scope="col">Numero de Mesa</th>
+                <th scope="col">Sector</th>
+                <tr class="table-secondary text-center">
+                    <td>  {{ mesa.id }}</td>
+                    <td>  {{ mesa.numero_mesa }}</td>
+                    <td> {{ mesa.sector }}</td>
+            </tbody>
+        </table>
+    </div>
+    <div class="container">
+        <button type="button" class="btn btn-outline-success">
+            <a href="{% url 'Crear Mesa' %}">Nueva Mesa</a>
+        </button> &nbsp; &nbsp;&nbsp;
+        <button type="button" class="btn btn-outline-primary">
+            <a href="{% url 'Buscar Mesa' %}">Buscar Mesa</a>
+        </button> &nbsp; &nbsp;&nbsp;
+        <button type="button" class="btn btn-outline-info">
+            <a href="{% url 'Actualizar Mesa' id=mesa.id %}">Actualizar Mesa</a>
+        </button> &nbsp; &nbsp;&nbsp;
+        <button type="button" class="btn btn-outline-danger">
+            <a href="{% url 'Eliminar Mesa' mesa_id=mesa.id %}">Eliminar Mesa</a>
+        </button> &nbsp; &nbsp;&nbsp;
+    </div>
+</div>
+{% endfor %}
+{% endblock %}
